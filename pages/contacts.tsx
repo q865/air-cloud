@@ -45,4 +45,3 @@ const Contacts: NextPage = () => {
 };
 
 export default Contacts;
-

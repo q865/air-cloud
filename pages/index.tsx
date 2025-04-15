@@ -1,39 +1,49 @@
+import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 
-const Header = () => {
+export default function Home() {
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Логотип */}
-        <Link href="/" className="text-2xl font-bold text-pink-500">
-          🎈 Air Cloud
-        </Link>
+    <>
+      <Head>
+        <title>Air Cloud - Гелиевые шары для вашего праздника</title>
+        <meta name="description" content="Оформление и продажа гелиевых шаров в Москве и области" />
+      </Head>
+      <main className="min-h-screen pt-24 bg-gradient-to-b from-white to-pink-50">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-6 leading-tight">
+            Оформление и доставка гелиевых шаров<br />по Москве и области
+          </h1>
+          <p className="text-lg text-gray-600 mb-8">
+            Создаём атмосферу праздника для любого повода — от детского дня рождения до стильной свадьбы 🎉
+          </p>
+          <div className="flex justify-center space-x-4">
+            <Link
+              href="/catalog"
+              className="bg-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-600 transition"
+            >
+              Смотреть каталог
+            </Link>
+            <Link
+              href="/contacts"
+              className="bg-white border border-pink-500 text-pink-500 px-6 py-3 rounded-full font-semibold hover:bg-pink-50 transition"
+            >
+              Связаться с нами
+            </Link>
+          </div>
 
-        {/* Навигация */}
-        <nav className="space-x-6 text-sm font-medium">
-          <Link href="/" className="text-gray-700 hover:text-pink-500 transition-colors">
-            Главная
-          </Link>
-          <Link href="/catalog" className="text-gray-700 hover:text-pink-500 transition-colors">
-            Каталог
-          </Link>
-          <Link href="/portfolio" className="text-gray-700 hover:text-pink-500 transition-colors">
-            Работы
-          </Link>
-          <Link href="/services" className="text-gray-700 hover:text-pink-500 transition-colors">
-            Услуги
-          </Link>
-          <Link href="/about" className="text-gray-700 hover:text-pink-500 transition-colors">
-            О нас
-          </Link>
-          <Link href="/contacts" className="text-gray-700 hover:text-pink-500 transition-colors">
-            Контакты
-          </Link>
-        </nav>
-      </div>
-    </header>
+          {/* Картинка с шарами */}
+          <div className="mt-12">
+            <Image
+              src="/balloons-hero.jpg"
+              alt="Гелиевые шары"
+              width={600}
+              height={400}
+              className="mx-auto"
+            />
+          </div>
+        </div>
+      </main>
+    </>
   );
-};
-
-export default Header;
-
+}
