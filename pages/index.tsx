@@ -1,31 +1,39 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Header from '../components/Header';
+import Link from 'next/link';
 
-const Home: NextPage = () => {
+const Header = () => {
   return (
-    <div>
-      <Head>
-        <title>Air Cloud - Облачные решения</title>
-        <meta name="description" content="Динамичные облачные решения для бизнеса." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <header className="fixed top-0 left-0 w-full bg-white shadow z-50">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        {/* Логотип */}
+        <Link href="/" className="text-2xl font-bold text-pink-500">
+          🎈 Air Cloud
+        </Link>
 
-      <Header />
-
-      <main className="pt-20">
-        <section className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}>
-          <div className="flex flex-col items-center justify-center h-full bg-black/40">
-            <h1 className="text-5xl font-bold text-white mb-4 animate-fadeInDown">Air Cloud</h1>
-            <p className="text-xl text-white mb-8 animate-fadeInUp">Динамичное облачное решение для вашего бизнеса</p>
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">
-              Связаться сейчас
-            </button>
-          </div>
-        </section>
-      </main>
-    </div>
+        {/* Навигация */}
+        <nav className="space-x-6 text-sm font-medium">
+          <Link href="/" className="text-gray-700 hover:text-pink-500 transition-colors">
+            Главная
+          </Link>
+          <Link href="/catalog" className="text-gray-700 hover:text-pink-500 transition-colors">
+            Каталог
+          </Link>
+          <Link href="/portfolio" className="text-gray-700 hover:text-pink-500 transition-colors">
+            Работы
+          </Link>
+          <Link href="/services" className="text-gray-700 hover:text-pink-500 transition-colors">
+            Услуги
+          </Link>
+          <Link href="/about" className="text-gray-700 hover:text-pink-500 transition-colors">
+            О нас
+          </Link>
+          <Link href="/contacts" className="text-gray-700 hover:text-pink-500 transition-colors">
+            Контакты
+          </Link>
+        </nav>
+      </div>
+    </header>
   );
 };
 
-export default Home;
+export default Header;
+
